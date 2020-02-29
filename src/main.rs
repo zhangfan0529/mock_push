@@ -17,7 +17,7 @@ async fn main() -> std::io::Result<()> {
             .route("/push", web::post().to(create_push_rule))
             .route("/mock/{id}", web::post().to(accept_push))
             .route("/list/{id}", web::post().to(push_record))
-    }).bind("127.0.0.1:8080")?
+    }).bind("0.0.0.0:7777")?
         .run()
         .await
 }
