@@ -14,7 +14,7 @@ pub async fn create_push_rule(params: web::Query<PushRule>,
     let rule = params.0;
     let mut value = rule_data.data.write().unwrap();
     value.insert(now, rule);
-    let addr = String::from("http://127.0.0.1:8080/mock/");
+    let addr = String::from("http://127.0.0.1:7777/mock/");
     addr + &now.to_string()
 }
 

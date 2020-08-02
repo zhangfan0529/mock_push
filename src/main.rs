@@ -16,7 +16,7 @@ async fn main() -> std::io::Result<()> {
             .app_data(push_list.clone())
             .route("/push", web::post().to(create_push_rule))
             .route("/mock/{id}", web::post().to(accept_push))
-            .route("/list/{id}", web::post().to(push_record))
+            .route("/list/{id}", web::get().to(push_record))
     }).bind("0.0.0.0:7777")?
         .run()
         .await
